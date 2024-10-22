@@ -59,53 +59,53 @@ The data is divided into **Fact Tables** and **Dimension Tables** to create a re
 
 To create DAX formulas, establish a relationship between the columns in the Actual table (Fact table) and the Dimension tables.
 
-**One-to-Many:** One-to-many relationship in DAX links dimension tables (unique values) to fact tables (repeated values), enabling efficient filtering and aggregation across tables. It ensures accurate analysis, with DAX functions like CALCULATE and RELATEDTABLE leveraging these relationships for data calculation and reporting in Power BI.
+**One-to-Many:** One-to-many relationship in DAX links dimension tables (unique values) to fact tables (repeated values), enabling efficient ```filtering``` and ```aggregation``` across tables. It ensures accurate analysis, with DAX functions like ```CALCULATE``` and ```RELATEDTABLE``` leveraging these relationships for data calculation and reporting in Power BI.
 
-  a.  **Actual**[Product_Id]to **Dimproduct**[Product_Id] | For Product Information. 
+  a.  **Actual**```[Product_Id]```to **Dimproduct**```[Product_Id]``` | For Product Information. 
   
-  b.	**Actual** [Date_Id]to **Dimdate**[ Date_Id] | For Date Information.
+  b.	**Actual** ```[Date_Id]```to **Dimdate**```[ Date_Id]``` | For Date Information.
   
-  c.	**Actual** [Cluster Head] to **Dimclusterhead**[Cluster Head]| For Cluster Head Information.
+  c.	**Actual** ```[Cluster Head]``` to **Dimclusterhead**```[Cluster Head]```| For Cluster Head Information.
   
-  d.	**Actual** [Channel]to **Dimchannel**[Channel]| For Channel Information.
+  d.	**Actual** ```[Channel]```to **Dimchannel**```[Channel]```| For Channel Information.
   
-  e.	**Actual** [Location] to **Dimlocation**[Location] | For Location Information.
+  e.	**Actual** ```[Location]``` to **Dimlocation**```[Location]``` | For Location Information.
 
 ### Dax Farmula for Calculating Matrix 
 ---
 **•	Aggregation Functions**
 ---
-SUM, AVERAGE, COUNT,  COUNTA, MIN, MAX
+```SUM```,```SUMX```, ```AVERAGE```, ```AVERAGEX ```, ```COUNT```,  ```COUNTA```, ```MIN```, ```MAX```
 
 ---
 **•	Time Intelligence Functions**
 ---
-TOTALYTD, PREVIOUSYEAR, DATEADD, SAMEPERIODLASTYEAR,PREVIOUSMONTH 
+```TOTALYTD```, ```PREVIOUSYEAR```, ```DATEADD```, ```SAMEPERIODLASTYEAR```, ```PREVIOUSMONTH``` ,```EOMONTH```,```EDATE```
 
 ---
 **•	Logical and Conditional Functions**
 ---
-IF, IFERROR, SBLANL, SWITCH
+```IF```, ```IFERROR```, ```SBLANL```, ```SWITCH```,```AND```, ```OR```, ```IN```
 
 ---
 **•	Mathematical Functions**
 ---
-DIVIDE,MULTIPLICATION
+```DIVIDE```,```MULTIPLICATION```
 
 ---
 **•	Filter Functions**
 ---
-CALCULATE, FILTER, ALL, ALLSELECTED, SELECTEDVALUE, VALUES
+```CALCULATE```, ```FILTER```, ```ALL```, ```ALLSELECTED```, ```SELECTEDVALUE```, ```VALUES```
 
 ---
 **•	Text Functions**
 ---
-CONCATENATE,ORMAT
+```CONCATENATE```,```ORMAT```
 
 ---
 **•	Ranking and Comparison Functions**
 ---
-RANKX, TOPN
+```RANKX```, ```TOPN```
 
 ---
 
@@ -136,18 +136,18 @@ In this section, the following key metrics were calculated using **DAX** in Powe
 ### Optimization Steps
 **Quadrant Analysis:** Quadrant Analysis to Identify category, Sub Category high Contribution by sales & Gross Profit Quadrant Analysis to Identify Location high Contribution by sales & Gross Profit.
 
-**GP Comparison :** Gross Profit & Volume Comparison for Category.
+**GP Comparison :** ```Gross Profit & Volume Comparison for Category.```
 
-**Pareto Principle (80/20 Rule):** A principle that suggests that a small percentage of product (20%) are responsible for a large percentage of outcomes (80%)
+**Pareto Principle (80/20 Rule):** ```A principle that suggests that a small percentage of product (20%) are responsible for a large percentage of outcomes (80%)```
 
-  **a.	Level:1-** Ascending order (Total Sales / Ranking of SKU By Sales/ Cumulative Sales/ Calculate Total SKU Sales/ Cumulative % = Cum/Total SKU sales/ SKU Count/ Cumulative sku Count/ Net SKU Count/ Cum SKU %
+  **Level:1-** ```Ascending order (Total Sales / Ranking of SKU By Sales/ Cumulative Sales/ Calculate Total SKU Sales/ Cumulative % = Cum/Total SKU sales/ SKU Count/ Cumulative sku Count/ Net SKU Count/ Cum SKU %```
     
-  **b.	Level:2-** Descending order (Des SKU NR)
+  **Level:2-** ```Descending order (Des SKU NR)```
     
-  **c.	Level:3-** Pareto Base/ Pareto % Top N revenue
+  **Level:3-** ```Pareto Base/ Pareto % Top N revenue```
 
-Show Sales & % SKU
-Calculate: Total Sales / %SKU Over Total SKU
+```Show Sales & % SKU```
+```Calculate: Total Sales / %SKU Over Total SKU```
 
 
 ---
@@ -161,12 +161,12 @@ Calculate: Total Sales / %SKU Over Total SKU
 
 ### PVM Analysis (Price, Volume, Mix) 
 PVM Analysis is a technique used to analyse the changes in a company’s revenue by breaking down the contributing factors into three main components:
-  1.	**Price:** The impact of changes in the price of products or services sold.
-  2.	**Volume:** The effect of changes in the quantity of products or services sold.
-  3.	**Mix:** The impact caused by selling different types or categories of products with varying profit margins (high-margin vs. low-margin products).
+  1.	**Price:** ```The impact of changes in the price of products or services sold.```
+  2.	**Volume:** ```The effect of changes in the quantity of products or services sold.```
+  3.	**Mix:** ```The impact caused by selling different types or categories of products with varying profit margins (high-margin vs. low-margin products).```
   
-- The goal of PVM analysis is to understand how much each factor (Price, Volume, Mix) contributes to changes in revenue or profit, which helps businesses make better decisions around pricing strategies, sales efforts, and product portfolio management
-- PVM Analysis helps to understand the factors affected the business to Increase or Decrease 
+**The goal of PVM analysis is to understand how much each factor (Price, Volume, Mix) contributes to changes in revenue or profit, which helps businesses make better decisions around pricing strategies, sales efforts, and product portfolio management**
+```PVM Analysis helps to understand the factors affected the business to Increase or Decrease``` 
 
 ### Formula for Actual vs. Budget PVM Analysis 
 1.	**Price Impact:** This shows the effect of the difference in the prices between actual and budgeted values, assuming the volume stayed constant.
@@ -202,14 +202,14 @@ This analysis evaluates business performance by into three keys (M3): “More,�
 
 
 **Key Variables:**
-  - NR Var. Parameter: Represents a percentage parameter
-  - GP Var. Parameter: Represents a percentage parameter
-  - C: A scaling factor for the gross profit variance.
-  - 
+  - ```Net Profit Variable Parameter: Represents a percentage parameter```
+  - ```Gross Profit Variabl Parameter: Represents a percentage parameter```
+  - ```Conditions: A scaling factor for the gross profit variance.```
+
 **The formula categorizes the results into three groups and assigns them a numeric value:**
-1.	**More (1):** Indicates high revenue growth and positive gross profit variance.
-2.	**Meet (2):** Represents stable or moderate growth with acceptable gross profit.
-3.	**Misses (3):** Reflects negative revenue growth and/or gross profit losses.
+1.	**More (1):** ```Indicates high revenue growth and positive gross profit variance.```
+2.	**Meet (2):** ```Represents stable or moderate growth with acceptable gross profit.```
+3.	**Misses (3):** ```Reflects negative revenue growth and/or gross profit losses.```
    
 **Purpose of the Formula:**
 Performance Tracking: Helps track whether business performance in terms of net revenue growth and gross profit variance is exceeding expectations, meeting expectations, or missing targets.
@@ -224,6 +224,9 @@ Monitoring: The numeric output (1, 2, 3) allows for simple monitoring of trends,
 ```DAX
 GP Var. Adjustments = GENERATESERIES(-50, 50, 0.5)
 NR Var. Adjustment = GENERATESERIES(-50, 50, 0.5)
+```
+**M3 Advanced Condition**
+```DAX
 M3 Advanced Condition = 
 VAR B = 'NR Var. Adjustment'[NR Adjustment  Value]
 VAR C = 'GP Var. Adjustments'[GP Adjustments  Value]
@@ -397,3 +400,44 @@ REPT( Iconemty, NrIcons_Empty)
 RETURN
 _DataBar
 ```
+
+
+
+---
+
+## **Conclusion & Further Resources**
+
+This repository outlines a complete analysis framework for optimizing the financial performance of **Crunchy Corner**. Using **Power BI** and **DAX**, we evaluated critical business metrics such as **sales trends**, **profitability**, **budgeting**, and applied advanced analytics techniques like **Pareto** and **PVM (Price, Volume, Mix) Analysis**.
+
+---
+
+### **🔗 Power BI Dashboard**
+To explore interactive visualizations of key financial insights, click the link below:  
+[**Click here to view the Power BI Dashboard**](https://app.powerbi.com/groups/me/reports/2582e4e0-b40e-4c56-bdc8-b5ea864afd68/f0839393194979873654?experience=power-bi)
+
+---
+
+### **📄 Documents and Reports**
+For detailed reports, project documentation, and other supporting materials, click the link below:  
+[**Click here to view the Documents and Reports**](https://1drv.ms/w/c/c9e4d94d1be77dfb/EXU0dJ8wfQdOi1U3aGeEUIEBmzeRVlkMDawBiOHQgG418A?e=dyUpsC)
+
+---
+
+### **📊 Dataset Access**
+To download or review the dataset used in this analysis, click the link below:  
+[**Click here to view the Dataset**](https://1drv.ms/x/c/c9e4d94d1be77dfb/EY7LJ1uy6l1LoF_NbE7oSG0BBcgVqEgMzozbIEVce3YC6A?e=dwebux)
+
+---
+
+This concludes the **Crunchy Corner** financial performance optimization project. For further details, feel free to explore the repository files or use the links above.
+
+---
+
+### **Repository Files Overview:**
+- **`/Data`**: Raw and cleaned dataset files.
+- **`/DAX_Scripts`**: DAX code used in the analysis.
+- **`/Visualizations`**: Screenshots of the Power BI reports.
+- **README.md**: Overview and instructions.
+
+---
+
